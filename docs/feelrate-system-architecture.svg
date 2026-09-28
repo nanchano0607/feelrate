@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
   <title id="title">FeelRate System Architecture</title>
-  <desc id="desc">React client, FastAPI AI server, Spring Boot backend, MySQL, Redis, Gemini, Kakao API architecture</desc>
+  <desc id="desc">React client, FastAPI AI server, Spring Boot backend, MySQL, Redis, Groq LLM, Google Geocoding and Kakao Local API architecture</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#F8FAFF"/>
@@ -89,14 +89,14 @@
   <circle cx="140" cy="687" r="24" fill="#FFF7D6"/>
   <path d="M140 674c-8 0-14 6-14 13 0 10 14 23 14 23s14-13 14-23c0-7-6-13-14-13zm0 18a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="#E4A900"/>
   <text x="180" y="695" class="box-title">Location Data</text>
-  <text x="125" y="743" class="body">Kakao Local API</text>
-  <text x="125" y="777" class="body">지도·음식점 정보 수집</text>
+  <text x="125" y="743" class="body">Google Geocoding · 좌표 변환</text>
+  <text x="125" y="777" class="body">Kakao Local API · 음식점 수집</text>
 
   <rect x="500" y="635" width="300" height="190" rx="24" fill="white" filter="url(#shadow)"/>
   <circle cx="550" cy="687" r="24" fill="#F0EEFF"/>
   <path d="M550 672l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#7565E8"/>
-  <text x="590" y="695" class="box-title">Gemini LLM</text>
-  <text x="535" y="743" class="body">검색 조건·리뷰 분석</text>
+  <text x="590" y="695" class="box-title">Groq LLM</text>
+  <text x="535" y="743" class="body">검색 조건 추출·리뷰 분석</text>
   <text x="535" y="777" class="body">AI 평점·추천 이유 생성</text>
 
   <rect x="910" y="635" width="230" height="190" rx="24" fill="white" filter="url(#shadow)"/>
