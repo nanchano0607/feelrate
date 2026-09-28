@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: feelrate-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?루트 .env에 MYSQL_ROOT_PASSWORD를 설정하세요 (.env.example 참고)}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-feelrate}
+      TZ: Asia/Seoul
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - feelrate-mysql-data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  redis:
+    image: redis:7.4-alpine
+    container_name: feelrate-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - feelrate-redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  feelrate-mysql-data:
+  feelrate-redis-data:

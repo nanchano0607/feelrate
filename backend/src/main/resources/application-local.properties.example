@@ -1,0 +1,16 @@
+# Spring Boot 로컬 설정 — 이 파일을 application-local.properties로 복사해 값을 채우세요.
+DB_URL=jdbc:mysql://localhost:3306/feelrate?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+DB_USERNAME=root
+DB_PASSWORD=
+
+SERVER_PORT=8080
+# 32바이트 이상 임의 문자열. phyton/app/.env의 JWT_SECRET과 같은 값
+JWT_SECRET=
+
+# Google Cloud Console > OAuth 2.0 클라이언트 (승인된 리디렉션 URI와 같아야 함)
+GOOGLE_REDIRECT_URI=http://localhost:8080/login/oauth2/code/google
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# true면 크롤러용 쓰기 API를 인증 없이 허용 (로컬 데이터 수집 전용, 배포 환경에서는 false)
+CRAWLER_PUBLIC=false

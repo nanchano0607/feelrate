@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">FeelRate System Architecture</title>
+  <desc id="desc">React client, FastAPI AI server, Spring Boot backend, MySQL, Redis, Gemini, Kakao API architecture</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FAFF"/>
+      <stop offset="1" stop-color="#F4F0FF"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#635BFF"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#27304A" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7C85A3"/>
+    </marker>
+    <style>
+      .title { font: 700 42px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#172033 }
+      .subtitle { font: 400 19px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#69738D }
+      .layer { font: 700 16px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#7C85A3; letter-spacing:2px }
+      .box-title { font: 700 24px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#172033 }
+      .box-title-light { font: 700 24px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:white }
+      .body { font: 500 17px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#59647E }
+      .body-light { font: 500 17px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#EEEAFE }
+      .chip { font: 600 15px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#5348D7 }
+      .arrow-label { font: 600 14px -apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR',sans-serif; fill:#69738D }
+      .flow { fill:none; stroke:#7C85A3; stroke-width:3; marker-end:url(#arrow) }
+      .flow-dash { fill:none; stroke:#A0A8BD; stroke-width:2.5; stroke-dasharray:8 8; marker-end:url(#arrow) }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1450" cy="90" r="230" fill="#DCD6FF" opacity="0.38"/>
+  <circle cx="80" cy="920" r="260" fill="#D9E8FF" opacity="0.4"/>
+
+  <text x="90" y="82" class="title">FeelRate System Architecture</text>
+  <text x="90" y="118" class="subtitle">자연어 조건 분석과 리뷰 기반 개인 맞춤형 음식점 추천 시스템</text>
+
+  <text x="90" y="185" class="layer">CLIENT</text>
+  <rect x="90" y="210" width="300" height="225" rx="26" fill="white" filter="url(#shadow)"/>
+  <circle cx="140" cy="262" r="25" fill="#E9F5FF"/>
+  <path d="M129 253h22v17h-22z M134 274h12" fill="none" stroke="#2388D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="180" y="270" class="box-title">React Web Client</text>
+  <text x="125" y="320" class="body">• Google 소셜 로그인</text>
+  <text x="125" y="354" class="body">• 자연어 기반 대화형 검색</text>
+  <text x="125" y="388" class="body">• 추천 결과·메뉴·리뷰 조회</text>
+  <rect x="125" y="404" width="86" height="30" rx="15" fill="#F0EEFF"/>
+  <text x="168" y="425" text-anchor="middle" class="chip">React</text>
+  <rect x="220" y="404" width="72" height="30" rx="15" fill="#F0EEFF"/>
+  <text x="256" y="425" text-anchor="middle" class="chip">Vite</text>
+
+  <text x="500" y="185" class="layer">APPLICATION</text>
+  <rect x="500" y="210" width="450" height="310" rx="26" fill="url(#hero)" filter="url(#shadow)"/>
+  <circle cx="550" cy="262" r="25" fill="white" opacity="0.16"/>
+  <path d="M539 264l8 8 15-19" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="590" y="270" class="box-title-light">FastAPI AI Server</text>
+  <text x="535" y="320" class="body-light">LangGraph Recommendation Pipeline</text>
+  <rect x="535" y="345" width="380" height="64" rx="15" fill="white" opacity="0.13"/>
+  <text x="560" y="373" class="body-light">① 위치 · 메뉴 · 상황 병렬 추출</text>
+  <text x="560" y="398" class="body-light">② 후보 교집합 및 점수 기반 필터링</text>
+  <rect x="535" y="424" width="380" height="64" rx="15" fill="white" opacity="0.13"/>
+  <text x="560" y="452" class="body-light">③ 리뷰 기반 AI 평점 생성</text>
+  <text x="560" y="477" class="body-light">④ 최종 추천 및 추천 이유 생성</text>
+
+  <rect x="1050" y="210" width="360" height="310" rx="26" fill="white" filter="url(#shadow)"/>
+  <circle cx="1100" cy="262" r="25" fill="#ECFDF3"/>
+  <path d="M1088 253h24v19h-24z M1094 247v6 M1106 247v6" fill="none" stroke="#24A06B" stroke-width="3" stroke-linecap="round"/>
+  <text x="1140" y="270" class="box-title">Spring Boot API</text>
+  <text x="1085" y="320" class="body">• 음식점·메뉴·리뷰 관리</text>
+  <text x="1085" y="354" class="body">• 조건별 음식점 후보 조회</text>
+  <text x="1085" y="388" class="body">• OAuth2 · JWT 인증/인가</text>
+  <text x="1085" y="422" class="body">• JPA 기반 데이터 영속화</text>
+  <rect x="1085" y="453" width="110" height="30" rx="15" fill="#ECFDF3"/>
+  <text x="1140" y="474" text-anchor="middle" class="chip" fill="#21815A">Java 21</text>
+  <rect x="1205" y="453" width="75" height="30" rx="15" fill="#ECFDF3"/>
+  <text x="1242" y="474" text-anchor="middle" class="chip" fill="#21815A">JPA</text>
+
+  <path d="M390 305 C435 305 455 305 500 305" class="flow"/>
+  <text x="445" y="288" text-anchor="middle" class="arrow-label">REST API</text>
+  <path d="M950 305 C990 305 1010 305 1050 305" class="flow"/>
+  <text x="1000" y="288" text-anchor="middle" class="arrow-label">후보·상세 조회</text>
+  <path d="M1050 385 C1010 385 990 385 950 385" class="flow"/>
+  <text x="1000" y="414" text-anchor="middle" class="arrow-label">음식점 데이터</text>
+
+  <text x="90" y="605" class="layer">EXTERNAL SERVICES &amp; DATA</text>
+  <rect x="90" y="635" width="300" height="190" rx="24" fill="white" filter="url(#shadow)"/>
+  <circle cx="140" cy="687" r="24" fill="#FFF7D6"/>
+  <path d="M140 674c-8 0-14 6-14 13 0 10 14 23 14 23s14-13 14-23c0-7-6-13-14-13zm0 18a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="#E4A900"/>
+  <text x="180" y="695" class="box-title">Location Data</text>
+  <text x="125" y="743" class="body">Kakao Local API</text>
+  <text x="125" y="777" class="body">지도·음식점 정보 수집</text>
+
+  <rect x="500" y="635" width="300" height="190" rx="24" fill="white" filter="url(#shadow)"/>
+  <circle cx="550" cy="687" r="24" fill="#F0EEFF"/>
+  <path d="M550 672l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#7565E8"/>
+  <text x="590" y="695" class="box-title">Gemini LLM</text>
+  <text x="535" y="743" class="body">검색 조건·리뷰 분석</text>
+  <text x="535" y="777" class="body">AI 평점·추천 이유 생성</text>
+
+  <rect x="910" y="635" width="230" height="190" rx="24" fill="white" filter="url(#shadow)"/>
+  <ellipse cx="960" cy="681" rx="23" ry="9" fill="#DDEBFF" stroke="#3977C3" stroke-width="2"/>
+  <path d="M937 681v31c0 5 10 9 23 9s23-4 23-9v-31 M937 697c0 5 10 9 23 9s23-4 23-9" fill="#EAF3FF" stroke="#3977C3" stroke-width="2"/>
+  <text x="1000" y="695" class="box-title">MySQL</text>
+  <text x="945" y="755" class="body">서비스 핵심 데이터</text>
+  <text x="945" y="785" class="body">영구 저장</text>
+
+  <rect x="1180" y="635" width="230" height="190" rx="24" fill="white" filter="url(#shadow)"/>
+  <g transform="translate(1210 665)" fill="#ED4457"><path d="M22 0l22 8-22 8L0 8z"/><path d="M0 17l22 8 22-8v8l-22 8-22-8z"/><path d="M0 34l22 8 22-8v8l-22 8-22-8z"/></g>
+  <text x="1275" y="695" class="box-title">Redis</text>
+  <text x="1215" y="755" class="body">인증 토큰 관리</text>
+  <text x="1215" y="785" class="body">임시 데이터 저장</text>
+
+  <path d="M570 520 C520 565 380 580 300 635" class="flow-dash"/>
+  <text x="410" y="578" class="arrow-label">장소 검색</text>
+  <path d="M700 520 C700 565 680 590 660 635" class="flow-dash"/>
+  <text x="712" y="578" class="arrow-label">LLM 호출</text>
+  <path d="M1180 520 C1130 565 1040 585 1020 635" class="flow"/>
+  <text x="1095" y="578" class="arrow-label">JPA</text>
+  <path d="M1300 520 C1300 565 1300 590 1300 635" class="flow-dash"/>
+  <text x="1320" y="578" class="arrow-label">Token</text>
+
+  <rect x="90" y="890" width="1320" height="2" fill="#DDE2EE"/>
+  <text x="90" y="932" class="subtitle">Request Flow</text>
+  <text x="225" y="932" class="body">사용자 요청 → 자연어 조건 분석 → 후보 조회 → 리뷰 분석 → 맞춤형 추천 결과</text>
+  <rect x="1330" y="910" width="80" height="32" rx="16" fill="#ECE9FF"/>
+  <text x="1370" y="932" text-anchor="middle" class="chip">FeelRate</text>
+</svg>

@@ -1,0 +1,399 @@
+/* 전체 레이아웃 */
+.chat-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #fefeff, #f3e6f9, #e0f0ff);
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* 블러 배경 원 */
+.blur-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blur-circle.blue {
+  width: 280px;
+  height: 280px;
+  background: #89BCFF;
+  filter: blur(150px);
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.blur-circle.pink {
+  width: 414px;
+  height: 414px;
+  background: #FF86E1;
+  filter: blur(250px);
+  top: 55%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+/* 상단 헤더 */
+.chat-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.chat-header .logo {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.chat-header h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #160211;
+}
+
+/* 메시지 영역 */
+.chat-box {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.chat-message-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center; /* ✅ 말풍선들을 중앙으로 정렬 */
+}
+
+.chat-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  
+}
+
+.chat-bubble {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  color: #160211;
+  width: fit-content;
+  max-width: 100%;
+}
+
+
+
+/* 식당 카드 */
+.restaurant-card {
+  max-width: 700px;   
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.restaurant-card p {
+  margin: 4px 0;
+}
+
+.restaurant-card a {
+  color: #3366cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 메뉴·리뷰 토글 버튼 */
+.restaurant-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.detail-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(69, 98, 136, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #456288;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.detail-toggle:hover:not(:disabled) {
+  background: rgba(69, 98, 136, 0.08);
+  border-color: rgba(69, 98, 136, 0.45);
+}
+
+.detail-toggle.active {
+  background: #456288;
+  border-color: #456288;
+  color: #fff;
+}
+
+.detail-toggle:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+.detail-toggle-status {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.detail-toggle-count {
+  min-width: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* 메뉴·리뷰 패널 공통 */
+.detail-panel {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 16px rgba(69, 98, 136, 0.08);
+  animation: detail-panel-in 0.2s ease-out;
+}
+
+@keyframes detail-panel-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #160211;
+}
+
+.detail-panel-count {
+  padding: 0 7px;
+  border-radius: 999px;
+  background: rgba(69, 98, 136, 0.1);
+  color: #456288;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.detail-panel-message {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(22, 2, 17, 0.55);
+}
+
+.detail-retry {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #456288;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 메뉴판: 이름 ····· 가격 */
+.menu-board {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 14px;
+  color: #160211;
+}
+
+.menu-row + .menu-row {
+  border-top: 1px solid rgba(22, 2, 17, 0.05);
+}
+
+.menu-name {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-leader {
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 1px dotted rgba(22, 2, 17, 0.25);
+  transform: translateY(-4px);
+}
+
+.menu-price {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: #456288;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 방문자 후기 인용 카드 */
+.review-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-card {
+  position: relative;
+  padding: 10px 12px 10px 30px;
+  border-left: 3px solid #FF86E1;
+  border-radius: 8px;
+  background: linear-gradient(to right, rgba(255, 134, 225, 0.07), rgba(137, 188, 255, 0.05));
+}
+
+.review-quote {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  font-family: Georgia, serif;
+  font-size: 26px;
+  line-height: 1;
+  color: #FF86E1;
+}
+
+.review-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: white;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 사용자 채팅 말풍선 (오른쪽 70% 정렬) */
+.user-bubble {
+  align-self: flex-end;
+  max-width: 70%;
+  margin-right: 15vw; /* 화면의 오른쪽 여백 */
+  background: rgba(255, 255, 255, 0.5);
+  text-align: left;
+}
+
+/* 챗봇 응답 말풍선 (왼쪽 70% 정렬) */
+.bot-bubble {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  max-width: 70%;
+  margin-left: 15vw; /* 화면의 왼쪽 여백 */
+  width: 100%;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: white;
+  border-top: 1px solid #ccc;
+  width: 66vw; /* 전체 너비의 70%만 사용 */
+  margin: 0 auto 5px auto; /* 중앙 정렬 및 아래 여백 */
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* 입력 필드 */
+.chat-input input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid rgba(22, 2, 17, 0.3);
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: #160211;
+  outline: none;
+}
+
+/* 전송 버튼 */
+.chat-input button {
+  background-color: rgba(69, 98, 136, 0.1);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #456288;
+  transition: background-color 0.2s ease;
+}
+
+.chat-input button:hover {
+  background-color: rgba(69, 98, 136, 0.2);
+}
+
+
+/* 사용자 텍스트는 오른쪽 정렬 */
+.chat-label.user {
+  align-self: flex-end;
+  margin-right: 16vw;
+}
+
+/* AI 텍스트는 왼쪽 정렬 */
+.chat-label.bot {
+  align-self: flex-start;
+  margin-left: 22vw;
+}
+
+.search-description {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}

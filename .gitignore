@@ -1,0 +1,42 @@
+### Secrets ###
+.env
+.env.*
+!.env.example
+**/src/main/resources/application-local.properties
+*.pem
+*.key
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### IDE ###
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+### Python ###
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+### Node ###
+node_modules/
+dist/
+*.log
+
+### Java / Gradle ###
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+backend/bin/
+
+### Crawled data (Kakao Local API 수집 원본 — 재배포 금지) ###
+phyton/app/backup_restaurants.jsonl
+phyton/app/data/filtered/
+phyton/app/data/raw/
