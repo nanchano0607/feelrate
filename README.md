@@ -1,8 +1,12 @@
 # FeelRate
 
+![FeelRate](docs/feelrate-main.png)
+
 > 자연어 조건 분석과 리뷰 기반 AI 평점으로 상황에 맞는 음식점을 추천하는 서비스
 
 "수원시청역 근처에서 조용하게 데이트하기 좋은 고깃집"처럼 문장으로 요청하면, LLM이 **위치·메뉴·상황** 조건을 분해해 추출하고 조건마다 알맞은 방식으로 후보 식당을 좁힌 뒤, 실제 방문자 리뷰를 분석해 **AI 평점과 추천 이유**를 제공합니다.
+
+## 아키텍처
 
 ![System Architecture](docs/feelrate-system-architecture.png)
 
@@ -23,6 +27,12 @@
 | Database | MySQL 8.4 (`ST_Distance_Sphere`, ngram FULLTEXT), Redis 7.4 |
 | Data | Kakao Local API, Selenium (Headless Chrome), Google Geocoding API |
 | Test | pytest |
+
+![Tech Stack](docs/feelrate-techstack.png)
+
+## ERD
+
+![ERD](docs/feelrate-erd.png)
 
 ## 추천 파이프라인
 
