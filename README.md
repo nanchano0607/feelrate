@@ -19,7 +19,7 @@
 |---|---|
 | Frontend | React 19, Vite, React Router |
 | Backend | Java 21, Spring Boot 3.4, Spring Security (OAuth2, JWT), Spring Data JPA |
-| AI Server | Python, FastAPI, LangChain, LangGraph, Groq API |
+| AI Server | Python, FastAPI, LangChain, LangGraph, Groq API (GPT-OSS 120B) |
 | Database | MySQL 8.4 (`ST_Distance_Sphere`, ngram FULLTEXT), Redis 7.4 |
 | Data | Kakao Local API, Selenium (Headless Chrome), Google Geocoding API |
 | Test | pytest |
@@ -133,6 +133,7 @@ http://localhost:5173 에서 Google로 로그인한 뒤 검색합니다.
 
 ```bash
 cd phyton/app
+.venv/bin/pip install -r requirements-dev.txt
 .venv/bin/python -m pytest
 ```
 
